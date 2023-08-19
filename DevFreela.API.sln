@@ -5,9 +5,11 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.API", "DevFreela.API\DevFreela.API.csproj", "{BE23C04C-88AE-4F41-AEA0-F151E88AF269}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Core", "DevFreela.Core\DevFreela.Core.csproj", "{396F46CB-85BC-4A4B-B249-9D416F36D6D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Core", "DevFreela.Core\DevFreela.Core.csproj", "{396F46CB-85BC-4A4B-B249-9D416F36D6D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Infrastructure", "DevFreela.Infrastructure\DevFreela.Infrastructure.csproj", "{8E0B6CA0-8772-40D2-B482-9280FD884F4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Infrastructure", "DevFreela.Infrastructure\DevFreela.Infrastructure.csproj", "{8E0B6CA0-8772-40D2-B482-9280FD884F4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Application", "DevFreela.Application\DevFreela.Application.csproj", "{8BDBD7AD-21EB-4A70-ACE7-023DA9558111}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{8E0B6CA0-8772-40D2-B482-9280FD884F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E0B6CA0-8772-40D2-B482-9280FD884F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E0B6CA0-8772-40D2-B482-9280FD884F4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BDBD7AD-21EB-4A70-ACE7-023DA9558111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BDBD7AD-21EB-4A70-ACE7-023DA9558111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BDBD7AD-21EB-4A70-ACE7-023DA9558111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BDBD7AD-21EB-4A70-ACE7-023DA9558111}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

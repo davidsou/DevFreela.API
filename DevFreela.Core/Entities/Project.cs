@@ -32,6 +32,14 @@ namespace DevFreela.Core.Entities
 
         public List<ProjectComment> Comments { get; private set; }
 
+        public void Cancel()
+        {
+            if(Status == ProjectStatusEnum.InProgress || Status == ProjectStatusEnum.Created)
+            {
+                Status = ProjectStatusEnum.Cancelled;
+            }
+        }
+
 
 
 
