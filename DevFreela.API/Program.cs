@@ -1,4 +1,7 @@
 using DevFreela.API.Model;
+using DevFreela.Application.Services.Implementations;
+using DevFreela.Application.Services.Interfaces;
+using DevFreela.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,10 +10,20 @@ var builder = WebApplication.CreateBuilder(args);
 //https://learn.microsoft.com/pt-br/aspnet/core/fundamentals/configuration/?view=aspnetcore-7.0
 builder.Services.Configure<OpeningTimeOption> 
     (builder.Configuration.GetSection(OpeningTimeOption.OpeningTime));
+
+builder.Services.AddSingleton<DevFreelaDbContext>();
+builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.AddScoped<ISkillService, SkillService>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
 
 var app = builder.Build();
 

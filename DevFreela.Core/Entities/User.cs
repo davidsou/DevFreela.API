@@ -11,6 +11,7 @@ namespace DevFreela.Core.Entities
     {
         public User(string fullName, string email, DateTime birthDate)
         {
+            
             FullName = fullName;
             Email = email;
             BirthDate = birthDate;
