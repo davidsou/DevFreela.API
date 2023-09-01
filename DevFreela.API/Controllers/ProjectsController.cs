@@ -1,6 +1,9 @@
 ﻿using DevFreela.API.Model;
+using DevFreela.Application.Commands.CreateComment;
+using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -13,10 +16,12 @@ namespace DevFreela.API.Controllers
     {
         private readonly OpeningTimeOption _option;
         private readonly IProjectService _projectService;
-        public ProjectsController(IOptions<OpeningTimeOption> option, IProjectService projectService)
+        private readonly IMediator _mediator;
+        public ProjectsController(IOptions<OpeningTimeOption> option, IProjectService projectService, IMediator mediator)
         {
             _option = option.Value;
             _projectService = projectService;
+            _mediator = mediator;
         }
         [HttpGet]
         public IActionResult Get(string query)
@@ -31,7 +36,7 @@ namespace DevFreela.API.Controllers
         {
             var project = _projectService.GetById(id);
 
-            if(project == null)
+            if (project == null)
             {
                 return NotFound();
             }
@@ -39,17 +44,35 @@ namespace DevFreela.API.Controllers
             return Ok(project);
         }
 
+        //[HttpPost]
+        //public IActionResult Post([FromBody] NewProjectInputModel inputModel)
+        //{
+        //    if (inputModel.Title.Length > 50)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    var id = _projectService.Create(inputModel);
+
+        //    return CreatedAtAction(nameof(GetById), new { id = id }, inputModel);
+        //}
+
+        /// <summary>
+        /// Using Mediator
+        /// </summary>
+        /// <param name="inputModel"></param>
+        /// <returns></returns>
         [HttpPost]
-        public IActionResult Post([FromBody] NewProjectInputModel inputModel)
+        public async Task<IActionResult> Post([FromBody] CreateProjectComand command)
         {
-            if(inputModel.Title.Length > 50)
+            if (command.Title.Length > 50)
             {
                 return BadRequest();
             }
-            var id = _projectService.Create(inputModel);
+            var id = await _mediator.Send(command);
 
-            return CreatedAtAction(nameof(GetById), new {id = id}, inputModel);
+            return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
+
 
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] UpdateProjectInputModel inputModel)
@@ -64,18 +87,27 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete (int id)
+        public IActionResult Delete(int id)
         {
             _projectService.Delete(id);
             return NoContent();
         }
 
+        //[HttpPost("{id}/comments")]
+        //public IActionResult PostComment(int id, [FromBody] CreateCommentInputModel inputModel)
+        //{
+        //    _projectService.CreateComment(inputModel);
+        //    return NoContent();
+        //}
+
         [HttpPost("{id}/comments")]
-        public IActionResult PostComment(int id,[FromBody] CreateCommentInputModel inputModel)
+        public async Task<IActionResult> PostComment(int id, [FromBody] CreateCommentCommand command)
         {
-            _projectService.CreateComment(inputModel);
+            await _mediator.Send(command);
             return NoContent();
         }
+
+
         [HttpPut("{id}/start")]
         public IActionResult Start(int id)
         {

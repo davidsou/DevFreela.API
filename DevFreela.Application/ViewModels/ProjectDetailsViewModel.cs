@@ -2,7 +2,9 @@
 {
     public class ProjectDetailsViewModel
     {
-        public ProjectDetailsViewModel(int id, string title, string description, decimal totalCost, DateTime? startedTime, DateTime? finishedAt)
+        public ProjectDetailsViewModel(int id, string title, string description
+            , decimal totalCost, DateTime? startedTime, DateTime? finishedAt
+            , string clientFullName, string freelancerFullName )
         {
             Id = id;
             Title = title;
@@ -10,6 +12,8 @@
             TotalCost = totalCost;
             StartedTime = startedTime;
             FinishedAt = finishedAt;
+            ClientFullName = clientFullName;
+            FreeLancerFullName = freelancerFullName;
         }
 
         public int Id { get; private set; }
@@ -18,6 +22,9 @@
         public decimal TotalCost { get; private set; }
         public DateTime? StartedTime { get;  private set; }
         public DateTime? FinishedAt { get; private  set; }
+
+        public string  ClientFullName { get; set; }
+        public string FreeLancerFullName { get; set; }
 
     }
 }
