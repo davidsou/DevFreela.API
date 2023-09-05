@@ -10,7 +10,6 @@
     <Folder Include="InputModels\" />
     <Folder Include="Queries\GetProjectById\" />
     <Folder Include="Queries\GetUser\" />
-    <Folder Include="Queries\GetAllProjects\" />
   </ItemGroup>
 
   <ItemGroup>

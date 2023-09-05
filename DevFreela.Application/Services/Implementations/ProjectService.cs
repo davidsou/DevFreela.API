@@ -76,7 +76,7 @@ namespace DevFreela.Application.Services.Implementations
             var projects = _dbContext.Projects;
 
             var projectsVieModel = projects
-                .Select(x => new ProjectViewModel(x.Title, x.CreatedAt))
+                .Select(x => new ProjectViewModel(x.Id,x.Title, x.CreatedAt ))
                 .ToList();
 
             return projectsVieModel;

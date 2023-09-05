@@ -1,15 +1,15 @@
 ﻿using DevFreela.Application.ViewModels;
-using DevFreela.Core.DTOs;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DevFreela.Application.Queries.GetAllSkills
+namespace DevFreela.Application.Queries.GetAllProjects
 {
-    public class GetAllSkillsQuery:IRequest<List<SkillDTO>>
+    public class GetAllProjectsQuery: IRequest<List<ProjectViewModel>>
     {
     }
 }
