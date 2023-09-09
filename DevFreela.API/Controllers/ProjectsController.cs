@@ -4,6 +4,7 @@ using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -12,6 +13,7 @@ namespace DevFreela.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProjectsController : ControllerBase
     {
         private readonly OpeningTimeOption _option;
@@ -62,7 +64,7 @@ namespace DevFreela.API.Controllers
         /// <param name="inputModel"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CreateProjectComand command)
+        public async Task<IActionResult> Post([FromBody] CreateProjectCommand command)
         {
             if (command.Title.Length > 50)
             {

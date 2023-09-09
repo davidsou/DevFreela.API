@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Application.Commands.CreateProject
 {
-    public class CreateProjectComand : IRequest<int>
+    public class CreateProjectCommand : IRequest<int>
     {
         public string Title { get; set; }
         public string Description { get; set; }
