@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Core", "DevFreela
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Infrastructure", "DevFreela.Infrastructure\DevFreela.Infrastructure.csproj", "{8E0B6CA0-8772-40D2-B482-9280FD884F4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Application", "DevFreela.Application\DevFreela.Application.csproj", "{8BDBD7AD-21EB-4A70-ACE7-023DA9558111}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Application", "DevFreela.Application\DevFreela.Application.csproj", "{8BDBD7AD-21EB-4A70-ACE7-023DA9558111}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.UnitTests", "DevFreela.UnitTests\DevFreela.UnitTests.csproj", "{213535FD-C4A0-453C-AE44-39A66B50EFD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8BDBD7AD-21EB-4A70-ACE7-023DA9558111}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BDBD7AD-21EB-4A70-ACE7-023DA9558111}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BDBD7AD-21EB-4A70-ACE7-023DA9558111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{213535FD-C4A0-453C-AE44-39A66B50EFD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{213535FD-C4A0-453C-AE44-39A66B50EFD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{213535FD-C4A0-453C-AE44-39A66B50EFD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{213535FD-C4A0-453C-AE44-39A66B50EFD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
